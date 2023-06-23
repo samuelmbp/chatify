@@ -2,7 +2,7 @@
 
 A chat application that allows users to send and reply to messages in real time using the [Stream Chat API](https://getstream.io/chat/)
 
-# Getting Started
+## Getting Started
 
 - Clone this repository to your local machine
 - Install Node.js dependencies in both folders; client and server
