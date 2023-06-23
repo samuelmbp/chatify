@@ -45,7 +45,7 @@ export function Signup() {
           type="submit"
           className="col-span-full"
         >
-          {signup.isLoading ? "Loading..." : "Signg Up"}
+          {signup.isLoading ? "Loading..." : "Sign Up"}
         </Button>
       </form>
     </>
