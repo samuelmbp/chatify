@@ -11,7 +11,7 @@ export async function userRoutes(app: FastifyInstance) {
     "/signup",
     async (req, res) => {
       const { id, name, image } = req.body;
-      if (id === null || id === "" || name === null || name === "") {
+      if (id == null || id === "" || name == null || name === "") {
         return res.status(400).send();
       }
 
@@ -29,7 +29,7 @@ export async function userRoutes(app: FastifyInstance) {
 
   app.post<{ Body: { id: string } }>("/login", async (req, res) => {
     const { id } = req.body;
-    if (id === null || id === "") {
+    if (id == null || id === "") {
       return res.status(400).send();
     }
 
@@ -38,7 +38,7 @@ export async function userRoutes(app: FastifyInstance) {
       users: [user],
     } = await streamChat.queryUsers({ id });
 
-    if (user === null) return res.status(401).send();
+    if (user == null) return res.status(401).send();
 
     const token = streamChat.createToken(id);
     return {

@@ -29,6 +29,11 @@ export function useAuth() {
   return useContext(Context) as AuthContext;
 }
 
+export function useLoggedInAuth() {
+  return useContext(Context) as AuthContext &
+    Required<Pick<AuthContext, "user">>;
+}
+
 type AuthProviderProps = {
   children: ReactNode;
 };
@@ -64,10 +69,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
   });
 
   useEffect(() => {
-    if (token === null || user === null) return;
+    if (token == null || user == null) return;
 
     const chat = new StreamChat(import.meta.env.VITE_STREAM_API_KEY!);
-    if (chat.tokenManager.token === token && chat.userID === user?.id) return;
+    if (chat.tokenManager.token === token && chat.userID === user.id) return;
 
     let isInterrupted = false;
     const connectPromise = chat.connectUser(user, token).then(() => {

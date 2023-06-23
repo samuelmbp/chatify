@@ -15,7 +15,7 @@ export function Login() {
     if (login.isLoading) return;
 
     const username = usernameRef.current?.value;
-    if (username === null || username === "") return;
+    if (username == null || username === "") return;
 
     login.mutate(username);
   };
@@ -29,7 +29,7 @@ export function Login() {
             items-center justify-items-end"
       >
         <label htmlFor="username">Username</label>
-        <Input id="username" required ref={usernameRef} />{" "}
+        <Input id="username" required ref={usernameRef} />
         <Button
           disabled={login.isLoading}
           type="submit"

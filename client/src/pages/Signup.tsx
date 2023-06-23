@@ -17,7 +17,7 @@ export function Signup() {
     const name = nameRef.current?.value;
     const imageURL = imageUrlRef.current?.value;
 
-    if (username === null || username === "" || name === null || name === "")
+    if (username == null || username === "" || name == null || name === "")
       return;
 
     signup.mutate({ id: username, name, image: imageURL });

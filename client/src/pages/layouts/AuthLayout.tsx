@@ -1,7 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { FullScreenCard } from "../../components/FullScreenCard";
 import { Link } from "../../components/Link";
-import { isUploadedImage } from "stream-chat-react";
 
 export function AuthLayout() {
   const location = useLocation();
